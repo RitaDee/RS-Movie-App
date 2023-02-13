@@ -3,3 +3,24 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  column-gap: 15px;
+  list-style-type: none;
+}
+
+li:nth-child(1) {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
