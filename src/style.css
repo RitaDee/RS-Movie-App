@@ -41,3 +41,10 @@ footer {
   gap: 0.5rem;
 }
 
+.main-show {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
