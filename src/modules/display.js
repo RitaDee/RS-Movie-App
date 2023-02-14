@@ -1,5 +1,4 @@
 import getShow from './api.js';
-import totalMovie from './total.js';
 
 const counter = document.querySelector('#movie-counter');
 
@@ -18,9 +17,13 @@ const showMovie = (arr) => {
   <div>
   <button id="comment">comment</button>
   </div>
-
-
   </div>`;
+
+  const list = document.createElement('li');
+  list.setAttribute('data-id', arr.show.id);
+  list.classList.add('list');
+  list.innerHTML = template;
+  Movies.appendChild(list);
 };
 
 const displayMovie = async () => {
@@ -29,4 +32,4 @@ const displayMovie = async () => {
   counter.textContent = '(&{totalMovie(Movie)})';
 };
 
-export default displayMovie;
+export default { showMovie, displayMovie };
