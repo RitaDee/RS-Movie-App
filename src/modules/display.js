@@ -3,7 +3,7 @@ import movieCount from './total.js';
 const Movies = document.querySelector('.main-show');
 
 const showMovie = (allShows) => {
-  const sliceShows = allShows.splice(0, 30);
+  const sliceShows = allShows.splice(0, 28);
   sliceShows.forEach((show) => {
     const template = `
   <div class="article">
