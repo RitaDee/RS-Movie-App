@@ -42,13 +42,47 @@ footer {
 }
 
 .main-show {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  column-gap: 24px;
+  row-gap: 24px;
+  width: 90%;
+  margin: 24px auto 24px auto;
 }
 
 .article {
-  width: 20%;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 100%;
 }
 
+img {
+  width: 100%;
+}
+
+.name {
+  font-size: 16px;
+  padding: 0;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+#like-r {
+  display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 4px auto;
+    width: 50%;
+}
+
+#btn-ctn {
+  width: 50%;
+  margin: 12px auto;
+}
+
+#comment {
+ border-radius: 8px;
+ font-size: 16px;
+ padding: 0.5rem;
+ width: 90%;
+}
