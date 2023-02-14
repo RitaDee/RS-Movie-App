@@ -1,8 +1,14 @@
-const url = 'https://api.tvmaze.com/shows/1';
+// import { showMovie, displayMovie } from './display.js';
+
+const url = 'https://api.tvmaze.com/shows';
 
 const getShow = async () => {
-  const data = await fetch(`${url}`);
-  return data.json();
+  await fetch(
+    url,
+  )
+    .then((response) => response.json())
+    .then((response) => JSON.stringify(response));
+// .then((response) => console.log(JSON.stringify(response)));
 };
 
 export default getShow;

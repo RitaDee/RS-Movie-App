@@ -1,15 +1,17 @@
 import getShow from './api.js';
 
-const counter = document.querySelector('#movie-counter');
+const storeData = getShow();
+console.log(storeData);
 
-const showMovie = (arr) => {
-  const Movies = document.querySelector('.main-show');
+const Movies = document.querySelector('.main-show');
+
+const showMovie = () => {
   const template = `
   <div class="article">
   <div class="img">
-    <img src=${arr.show.image.medium}>
+    <h1>Hello World</h1>
   </div>
-  <div class="name"> <p> ${arr.show.name} </p> </div>
+  <div class="name"> <p>Shaaibu</p> </div>
   <div class="like-r>
   <p><i class="fa-regular fa-heart"></i></p>
   <p class="likes"> <span>0</span> likes</p>
@@ -18,18 +20,7 @@ const showMovie = (arr) => {
   <button id="comment">comment</button>
   </div>
   </div>`;
-
-  const list = document.createElement('li');
-  list.setAttribute('data-id', arr.show.id);
-  list.classList.add('list');
-  list.innerHTML = template;
-  Movies.appendChild(list);
+  Movies.innerHTML += template;
 };
 
-const displayMovie = async () => {
-  const fetchMovie = await getShow();
-  const Movies = fetchMovie.slice(120, 150);
-  counter.textContent = '(&{totalMovie(Movie)})';
-};
-
-export default { showMovie, displayMovie };
+export default showMovie;
