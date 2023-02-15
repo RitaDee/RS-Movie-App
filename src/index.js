@@ -1,4 +1,5 @@
 import './style.css';
-import getShow from './modules/api.js';
+import showMovie from './modules/display.js';
+import fetchData from './modules/popUp.js';
 
-getShow();
+showMovie();

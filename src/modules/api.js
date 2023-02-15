@@ -1,14 +1,7 @@
-import showMovie from './display.js';
-
-const url = 'https://api.tvmaze.com/shows';
-
-const getShow = async () => {
-  await fetch(
-    url,
-  )
-    .then((response) => response.json())
-    // .then((response) => JSON.stringify(response))
-    .then((response) => showMovie(response));
+const getData = async () => {
+  const response = await fetch('https://api.tvmaze.com/shows');
+  const data = await response.json();
+  return data;
 };
 
-export default getShow;
+export default getData;

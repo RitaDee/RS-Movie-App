@@ -83,9 +83,47 @@ img {
   margin: 12px auto;
 }
 
-#comment {
+.comment {
  border-radius: 8px;
  font-size: 16px;
  padding: 0.5rem;
  width: 90%;
+}
+
+/* styling for pop up window */
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  backdrop-filter: blur(10px);
+}
+
+.popImage {
+  padding-top: 50px;
+  width: 70%;
+  height: 80%;
+}
+
+.content {
+  background-color: #6666ff;
+  width: 90%;
+  margin: 0 auto;
+  height: 750px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+
+.cancel {
+  padding-top: 25px;
 }

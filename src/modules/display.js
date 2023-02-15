@@ -1,8 +1,11 @@
 import movieCount from './total.js';
+import getData from './api.js';
+import fetchData from './popUp.js';
 
 const Movies = document.querySelector('.main-show');
 
-const showMovie = (allShows) => {
+const showMovie = async () => {
+  const allShows = await getData();
   const sliceShows = allShows.splice(0, 28);
   sliceShows.forEach((show) => {
     const template = `
@@ -16,7 +19,7 @@ const showMovie = (allShows) => {
   <p class="likes"> <span>0</span> likes</p>
   </div>
   <div id="btn-ctn">
-  <button id="comment">comment</button>
+  <button id="${show.name}" class="comment">comment</button>
   </div>
   </div>`;
     Movies.innerHTML += template;
@@ -25,6 +28,7 @@ const showMovie = (allShows) => {
 
     movieCount(Movies, num);
   });
+  fetchData();
 };
 
 export default showMovie;
