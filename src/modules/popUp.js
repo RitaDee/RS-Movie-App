@@ -21,15 +21,16 @@ const fetchData = async () => {
           container.innerHTML += `
           <div class="popup">
           <div class="content">
-          <div class="head">
-          <img class="popImage" src="${elem.image.medium}" height="10px"/>
-          <h2>${elem.name}</h2>
+          <div class="part">
           <i class="fa-solid fa-x close fa-2x cancel" aria-hidden="true"></i>
-          </div>
-          <div>
-            <form>
-              <input type="text" placeholder="Your name" />
-            <form>
+          <img class="popImage" src="${elem.image.medium}"/>
+          <p class="namepop">${elem.name}</p>
+          <form>
+            <h2>Add Comment</h2><br>
+            <input type="text" placeholder="Your name" />
+            <textarea rows="5" placeholder="Your comment"></textarea>
+            <button type="submit">Comment</button>
+          </form>
           </div>
           </div>
           </div
