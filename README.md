@@ -109,8 +109,9 @@ After you're finished please remove all the comments and instructions!
   - `The comments popup.`
 - **When the user clicks on the Like button of an item, the interaction is recorded in the Involvement API and the screen is updated**
 - **When the user clicks on the "Comments" button, the Comments popup appears.**
-- **Set up a JavaScript testing library (Jest).
-- **We have counters in all the interfaces that showimprove the look and feel of the application, adding the styles**
+- **Set up a JavaScript testing library (Jest)**.
+- **We have counters in all the interfaces that show and improve the look and feel of the application.**
+- **Add styles.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,7 +121,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- > Add a link to your deployed project. -->
 
-<!-- - [Live Demo Link](https://ritadee.github.io/Leader-board/) -->
+<!-- - [Live Demo Link] -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -233,6 +234,12 @@ Example:
 - GitHub: [@RitaDee](https://github.com/RitaDee)
 - Twitter: [@durdana_dee](https:https://twitter.com/durdana_dee)
 - LinkedIn: [LinkedIn](https:https://www.linkedin.com/in/rita-daniel/)
+
+👤 **Shaaibu Suleiman**
+- GitHub: [@githubhandle](https://github.com/shaaibu7)
+- Twitter: [@twitterhandle](https://twitter.com/SuleimanShaaibu?t=EAqVJrP59poEb2W46kK9vg&s=09)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shaaibu-suleiman-119271206)
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
