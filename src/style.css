@@ -160,6 +160,6 @@ button[type=submit] {
   color: white;
 }
 
-.heart {
+#heart {
   cursor: pointer;
 }

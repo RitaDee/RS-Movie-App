@@ -1,10 +1,9 @@
-import addLikes from './likes.js';
+import getLikes, { likesUrl } from './likes.js';
 
 const fetchLike = (reveal) => {
   reveal.forEach((items) => {
     const likes = async () => {
-      const res = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qzyJ0OF1qEV0miRaPOXO/likes/');
-      const predata = res.json();
+      const predata = await getLikes();
       return predata;
     };
     likes().then((data) => {
@@ -18,19 +17,21 @@ const fetchLike = (reveal) => {
   });
 };
 
-const newLike = (heart, index, id) => {
-  heart.forEach((hit, ind) => {
-    hit.addEventListener('click', () => {
-      if (ind === index) {
-        addLikes(id);
-        const parent = hit.parentElement.parentElement.parentElement;
-        const eachlike = parent.querySelector('.likes');
-        const eachIntext = eachlike.innerText;
-        const increase = parseInt(eachIntext, 10) + 1;
-        eachlike.innerText = increase;
-      }
-    });
-  });
+const newLike = async (id) => {
+  const res = await fetch(
+    likesUrl,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: id,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    },
+  );
+  window.location.reload();
+  return res;
 };
 
 export { fetchLike, newLike };
