@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #011928;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #66f;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background-color: #66f;
+  color: #f5f5f5;
+  padding: 3rem;
+}
+
+.creators {
+  display: flex;
+  font-size: 16px;
+  gap: 0.5rem;
+}
+
+.main-show {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  column-gap: 24px;
+  row-gap: 24px;
+  width: 90%;
+  margin: 24px auto 24px auto;
+}
+
+.article {
+  background-color: rgb(0, 77, 153);
+  border: 2px solid black;
+  border-radius: 8px;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.name {
+  font-size: 16px;
+  padding: 0;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+#like-r {
+  color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 4px auto;
+  width: 50%;
+}
+
+#btn-ctn {
+  width: 50%;
+  margin: 12px auto;
+}
+
+.comment {
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 0.5rem;
+  width: 90%;
+}
+
+/* styling for pop up window */
+
+.popup {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  position: fixed;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+}
+
+.popImage {
+  width: 60%;
+  height: 75%;
+  padding-top: 30px;
+}
+
+.content {
+  background-color: whitesmoke;
+  width: 90%;
+  margin: 0 auto;
+  height: 95%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.part {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cancel {
+  margin-top: 15%;
+  padding-left: 90%;
+}
+
+.namepop {
+  font-size: 60px;
+}
+
+form {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: 40%;
+}
+
+input {
+  border-radius: 5px;
+  height: 20%;
+  border: 1px solid rgb(0, 77, 153);
+  padding: 15px;
+}
+
+textarea {
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid rgb(0, 77, 153);
+}
+
+button[type=submit] {
+  padding: 10px;
+  background-color: rgb(0, 77, 153);
+  color: white;
+}
+
+#heart {
+  cursor: pointer;
+}
