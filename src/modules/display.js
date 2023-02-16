@@ -33,7 +33,6 @@ const showMovie = async () => {
     const card = document.querySelectorAll('.article');
     fetchLike(card);
     newLike(heart, index, show.id);
-    console.log(show.id);
   });
   fetchData();
 };

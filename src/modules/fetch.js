@@ -4,7 +4,6 @@ const fetchLike = (reveal) => {
   reveal.forEach((items) => {
     const likes = async () => {
       const res = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/qzyJ0OF1qEV0miRaPOXO/likes/');
-
       const predata = res.json();
       return predata;
     };
@@ -12,7 +11,7 @@ const fetchLike = (reveal) => {
       data.forEach((dat) => {
         if (parseInt(items.dataset.id, 10) === dat.item_id) {
           const like = items.querySelector('.likes');
-          like.innerText = dat.like;
+          like.innerText = dat.likes;
         }
       });
     });
