@@ -159,3 +159,7 @@ button[type=submit] {
   background-color: rgb(0, 77, 153);
   color: white;
 }
+
+.heart {
+  cursor: pointer;
+}
