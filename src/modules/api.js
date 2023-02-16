@@ -7,7 +7,6 @@ const getShow = async () => {
     url,
   )
     .then((response) => response.json())
-    // .then((response) => JSON.stringify(response))
     .then((response) => showMovie(response));
 };
 
