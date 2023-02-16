@@ -116,7 +116,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- LIVE DEMO -->
 
-## 🚀 <a name="live-demo" href="https://ritadee.github.io/Leader-board/dist">Live Demo</a>
+## 🚀 <a name="live-demo" href="https://ritadee.github.io/RS-Movie-App/dist/">Live Demo</a>
 
 <!-- > Add a link to your deployed project. -->
 
