@@ -16,7 +16,7 @@ const showMovie = (allShows) => {
   <p class="likes"> <span>0</span> likes</p>
   </div>
   <div id="btn-ctn">
-  <button id="comment">comment</button>
+  <button id="comment" class="">comment</button>
   </div>
   </div>`;
     Movies.innerHTML += template;
