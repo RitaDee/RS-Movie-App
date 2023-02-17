@@ -111,7 +111,7 @@ img {
 .content {
   background-color: #009999;
   overflow-y: auto;
-  width: 80%;
+  width:70%;
   margin: 0 auto;
   height: 100%;
   padding-top: 100px;
@@ -171,7 +171,8 @@ button[type=submit] {
 
 table {
   height: 10vh;
-  width: 70%;
+  width: 80%;
+  padding: 1rem;
 }
 
 table,

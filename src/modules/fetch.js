@@ -1,4 +1,5 @@
 import getLikes, { likesUrl } from './likes.js';
+import showLikes from './showlikes.js';
 
 const fetchLike = (reveal) => {
   reveal.forEach((items) => {
@@ -30,7 +31,7 @@ const newLike = async (id) => {
       },
     },
   );
-  window.location.reload();
+  showLikes();
   return res;
 };
 

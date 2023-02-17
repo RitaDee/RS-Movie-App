@@ -28,7 +28,6 @@ const fetchData = async () => {
           <img class="popImage" src="${dataObj.image.medium}"/>
           <p class="namepop">${dataObj.name}</p>
           <div id="${dataObj.id}">
-            <button class="commentBtn" id="${dataObj.id}">See Comments</button>
             <span class="commentspan"></span>
             <table class="table">
               <tr>
@@ -54,7 +53,7 @@ const fetchData = async () => {
         sendComment(parseInt(item, 10));
       });
       getAllComment(parseInt(item, 10));
-      // clickClose(container);
+      clickClose(container);
     });
   });
 };
