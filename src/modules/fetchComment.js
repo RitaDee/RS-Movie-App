@@ -8,19 +8,16 @@ const sendComment = async (id) => {
     const form = document.querySelector('.Form');
     if (username.length !== 0 && usercomment.length !== 0) {
       await postComments(`item${id}`, username, usercomment);
-      console.log(id, username, usercomment);
       form.reset();
       e.preventDefault();
-    } else {
-      console.log('fill inputs');
     }
   });
 };
 
 const getAllComment = async (id) => {
-  const container = document.getElementById(`${id}`);
+  // const container = document.getElementById(`${id}`);
   const table = document.querySelector('.table');
-  const submitBtn = document.querySelector(`#item${id}`);
+  // const submitBtn = document.querySelector(`#item${id}`);
   const commentBtn = document.querySelector('.commentBtn');
   const commentSpan = document.querySelector('.commentspan');
   const data = await getComments(id);
@@ -35,7 +32,6 @@ const getAllComment = async (id) => {
     commentSpan.innerHTML += `${data.length} comments for this movie`;
     e.preventDefault();
   });
-  console.log(container, submitBtn, data);
 };
 
 export { sendComment, getAllComment };
