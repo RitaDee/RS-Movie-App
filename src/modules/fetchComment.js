@@ -13,7 +13,6 @@ const sendComment = async (id) => {
     }
   });
 };
-
 const getAllComment = async (id) => {
   // const container = document.getElementById(`${id}`);
   const table = document.querySelector('.table');
@@ -21,6 +20,7 @@ const getAllComment = async (id) => {
   const commentBtn = document.querySelector('.commentBtn');
   const commentSpan = document.querySelector('.commentspan');
   const data = await getComments(id);
+
   commentBtn.addEventListener('click', (e) => {
     data.forEach((elem) => {
       table.innerHTML += `<tr>

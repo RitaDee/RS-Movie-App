@@ -12,9 +12,8 @@ const getComments = async (id) => {
 
 const postComments = (id, name, comments) => {
   const add = async () => {
-    const urlPost = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments/`;
-
-    const response = await fetch(urlPost, {
+    const posted = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments/`;
+    const response = await fetch(posted, {
       method: 'POST',
       body: JSON.stringify({
         item_id: id,
@@ -24,9 +23,10 @@ const postComments = (id, name, comments) => {
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-    });
-    const data = await response.text();
-    return data;
+    })
+      .then(() => true)
+      .catch(() => false);
+    return response;
   };
   add();
 };

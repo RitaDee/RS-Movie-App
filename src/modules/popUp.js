@@ -1,6 +1,12 @@
 import getData from './api.js';
 import { sendComment, getAllComment } from './fetchComment.js';
 
+const clickClose = (container) => {
+  const cancelBtn = document.querySelector('.cancel');
+  cancelBtn.addEventListener('click', () => {
+    container.innerHTML = '';
+  });
+};
 const fetchData = async () => {
   const data = await getData();
   const res = data.splice(0, 28);
@@ -8,26 +14,21 @@ const fetchData = async () => {
   const container = document.querySelector('.alert');
   const btn = document.querySelectorAll('.comment');
 
-  const clickClose = () => {
-    const cancelBtn = document.querySelector('.cancel');
-    cancelBtn.addEventListener('click', () => {
-      container.innerHTML = '';
-    });
-  };
   btn.forEach((item) => {
     item.addEventListener('click', (e) => {
-      const item = e.target.getAttribute('id');
-      res.forEach((elem) => {
-        if (item === elem.name) {
-          container.innerHTML += `
+      const item = e.target.getAttribute('data-index');
+      const dataObj = res.find(
+        (resObj) => parseInt(resObj.id, 10) === parseInt(item, 10),
+      );
+      container.innerHTML += `
           <div class="popup">
           <div class="content">
           <div class="part">
           <i class="fa-solid fa-x close fa-2x cancel" aria-hidden="true"></i>
-          <img class="popImage" src="${elem.image.medium}"/>
-          <p class="namepop">${elem.name}</p>
-          <div id="${elem.id}">
-            <button class="commentBtn">See Comments</button>
+          <img class="popImage" src="${dataObj.image.medium}"/>
+          <p class="namepop">${dataObj.name}</p>
+          <div id="${dataObj.id}">
+            <button class="commentBtn" id="${dataObj.id}">See Comments</button>
             <span class="commentspan"></span>
             <table class="table">
               <tr>
@@ -41,17 +42,17 @@ const fetchData = async () => {
             <h2>Add Comment</h2><br>
             <input type="text" class="username" placeholder="Your name" required/>
             <textarea rows="5" class="usercomment" placeholder="Your comment" required></textarea>
-            <button class="btnSubmit" id="item${elem.id}" type="submit">Comment</button>
+            <button class="btnSubmit" id="item${dataObj.id}" type="submit">Comment</button>
           </form>
           </div>
           </div>
           </div
           `;
-          clickClose();
-          sendComment(elem.id);
-          getAllComment(elem.id);
-        }
-      });
+
+      // }
+      sendComment(parseInt(item, 10));
+      getAllComment(parseInt(item, 10));
+      clickClose(container);
     });
   });
 };
