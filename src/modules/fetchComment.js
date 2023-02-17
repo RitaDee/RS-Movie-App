@@ -30,6 +30,7 @@ const sendComment = async (id) => {
     getAllComment(id);
     return res;
   }
+  return id;
 };
 
 export { sendComment, getAllComment };

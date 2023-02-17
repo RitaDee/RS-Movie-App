@@ -1,4 +1,4 @@
-const appId = 'x7SedcmnnF8GWHDjKuID';
+const appId = 'Cdks7edv0UuC8Wi4mnCb';
 
 const getComments = async (id) => {
   const urlComments = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=item${id}`;

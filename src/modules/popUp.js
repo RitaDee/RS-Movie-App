@@ -31,9 +31,9 @@ const fetchData = async () => {
             <span class="commentspan"></span>
             <table class="table">
               <tr>
-              <td>username<td>
-              <td>comment<td>
-              <td>creation_date<td>
+              <td>username</td>
+              <td>comment</td>
+              <td>creation_date</td>
               </tr>
             </table>
           </div>
