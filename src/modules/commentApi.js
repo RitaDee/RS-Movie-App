@@ -10,24 +10,20 @@ const getComments = async (id) => {
 
 // post comment on api
 
-const postComments = (id, name, comments) => {
-  const add = async () => {
-    const posted = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments/`;
-    const response = await fetch(posted, {
-      method: 'POST',
-      body: JSON.stringify({
-        item_id: id,
-        username: name,
-        comment: comments,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then(() => true)
-      .catch(() => false);
-    return response;
-  };
-  add();
+const postComments = async (id, name, comments) => {
+  const posted = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments/`;
+  const response = await fetch(posted, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: id,
+      username: name,
+      comment: comments,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  const data = response.text();
+  return data;
 };
 export { getComments, postComments };

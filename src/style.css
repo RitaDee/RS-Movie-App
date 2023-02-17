@@ -177,7 +177,6 @@ table {
 table,
 tr {
   border: 1px solid black;
-  /* height: 0; */
   overflow-y: scroll;
 }
 
