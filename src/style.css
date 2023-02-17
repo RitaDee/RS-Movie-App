@@ -110,9 +110,11 @@ img {
 
 .content {
   background-color: whitesmoke;
+  overflow-y: auto;
   width: 90%;
   margin: 0 auto;
-  height: 95%;
+  height: 1000px;
+  padding-top: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -160,8 +162,41 @@ button[type=submit] {
   padding: 10px;
   background-color: rgb(0, 77, 153);
   color: white;
+  margin-bottom: 30px;
 }
 
 #heart {
   cursor: pointer;
+}
+
+table,tr {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+tr:hover {
+  background-color: #66f;
+}
+
+th {
+  padding: 10px;
+}
+
+td {
+  padding-right: 5px;
+  text-align: center;
+}
+
+.commentBtn {
+  padding: 7px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  background-color: rgb(0, 77, 153);
+  color: white;
+}
+
+.commentspan {
+  color: #66f;
+  font-size: 20px;
+  font-weight: 600;
 }

@@ -26,7 +26,15 @@ const fetchData = async () => {
           <i class="fa-solid fa-x close fa-2x cancel" aria-hidden="true"></i>
           <img class="popImage" src="${elem.image.medium}"/>
           <p class="namepop">${elem.name}</p>
-          <div id="${elem.id}"></div>
+          <div id="${elem.id}">
+            <button class="commentBtn">See Comments</button>
+            <span class="commentspan"></span>
+            <table class="table">
+              <th>username<th>
+              <th>comment<th>
+              <th>creation_date<th>
+            </table>
+          </div>
           <form class="Form">
             <h2>Add Comment</h2><br>
             <input type="text" class="username" placeholder="Your name" required/>
