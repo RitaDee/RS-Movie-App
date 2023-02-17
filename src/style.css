@@ -109,11 +109,11 @@ img {
 }
 
 .content {
-  background-color: whitesmoke;
+  background-color: #009999;
   overflow-y: auto;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
-  height: 1000px;
+  height: 100%;
   padding-top: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -129,7 +129,7 @@ img {
 }
 
 .cancel {
-  margin-top: 15%;
+  margin-top: 30%;
   padding-left: 90%;
 }
 
@@ -169,10 +169,15 @@ button[type=submit] {
   cursor: pointer;
 }
 
+table {
+  height: 10vh;
+  width: 70%;
+}
+
 table,
 tr {
   border: 1px solid black;
-  height: 0;
+  /* height: 0; */
   overflow-y: scroll;
 }
 
