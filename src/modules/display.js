@@ -20,7 +20,7 @@ const showMovie = async () => {
   <p class="likes"> <span class="${show.id}">0</span> likes</p>
   </div>
   <div id="btn-ctn">
-  <button id="${show.name}" class="comment">comment</button>
+  <button id="${show.name}" data-index="${show.id}" class="comment">comment</button>
   </div>
   </div>`;
     Movies.innerHTML += template;
