@@ -1,4 +1,5 @@
 import getData from './api.js';
+import { sendComment, getAllComment } from './fetchComment.js';
 
 const fetchData = async () => {
   const data = await getData();
@@ -25,17 +26,20 @@ const fetchData = async () => {
           <i class="fa-solid fa-x close fa-2x cancel" aria-hidden="true"></i>
           <img class="popImage" src="${elem.image.medium}"/>
           <p class="namepop">${elem.name}</p>
-          <form>
+          <div id="${elem.id}"></div>
+          <form class="Form">
             <h2>Add Comment</h2><br>
-            <input type="text" placeholder="Your name" />
-            <textarea rows="5" placeholder="Your comment"></textarea>
-            <button type="submit">Comment</button>
+            <input type="text" class="username" placeholder="Your name" required/>
+            <textarea rows="5" class="usercomment" placeholder="Your comment" required></textarea>
+            <button class="btnSubmit" id="item${elem.id}" type="submit">Comment</button>
           </form>
           </div>
           </div>
           </div
           `;
           clickClose();
+          sendComment(elem.id);
+          getAllComment(elem.id);
         }
       });
     });
