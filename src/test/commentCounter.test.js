@@ -2,8 +2,6 @@
  * @jest-environment jsdom
  */
 
-import { getAllComment } from '../modules/fetchComment';
-
 describe('commentCounter', () => {
   test('returns the number of comments for each movie', () => {
     const data = [
