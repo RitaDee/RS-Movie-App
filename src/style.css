@@ -109,9 +109,9 @@ img {
 }
 
 .content {
-  background-color: #009999;
+  background-color: #099;
   overflow-y: auto;
-  width:70%;
+  width: 70%;
   margin: 0 auto;
   height: 100%;
   padding-top: 100px;

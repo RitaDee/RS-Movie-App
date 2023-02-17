@@ -13,23 +13,19 @@ const getAllComment = async (id) => {
       table.appendChild(tr);
     });
     commentSpan.innerHTML = `${data.length} comments for this movie`;
-  } else {
-    const h3 = document.createElement('h3');
-    h3.textContent = 'No Comments';
-    table.appendChild(h3);
   }
 };
 
-const sendComment = async (id) => {
-  const username = document.querySelector('.username');
-  const usercomment = document.querySelector('.usercomment');
+const sendComment = async (id, name, comment) => {
+  console.log(name, comment)
   const form = document.querySelector('.Form');
-  if (username.value.length !== 0 && usercomment.value.length !== 0) {
-    const res = await postComments(`item${id}`, username.value, usercomment.value);
-    form.reset();
-    getAllComment(id);
-    return res;
-  }
+  form.reset();
+  // if (username.value.length !== 0 && usercomment.value.length !== 0) {
+  //   const res = await postComments(`item${id}`, username.value, usercomment.value);
+  //   getAllComment(id);
+  //   form.reset();
+  //   return res;
+  // }
   return id;
 };
 

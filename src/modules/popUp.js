@@ -49,8 +49,10 @@ const fetchData = async () => {
           `;
       const submitBtn = document.querySelector('.btnSubmit');
       submitBtn.addEventListener('click', (e) => {
+        const username = document.querySelector('.username');
+        const usercomment = document.querySelector('.usercomment');
         e.preventDefault();
-        sendComment(parseInt(item, 10));
+        sendComment(parseInt(item, 10), username.value, usercomment.value);
       });
       getAllComment(parseInt(item, 10));
       clickClose(container);
