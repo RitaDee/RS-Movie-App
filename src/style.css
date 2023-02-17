@@ -171,7 +171,8 @@ button[type=submit] {
 
 table,tr {
   border: 1px solid black;
-  border-collapse: collapse;
+  height: 0px;
+  overflow-y: scroll;
 }
 
 tr:hover {
@@ -185,6 +186,7 @@ th {
 td {
   padding-right: 5px;
   text-align: center;
+  width: 140px;
 }
 
 .commentBtn {

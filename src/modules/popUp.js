@@ -30,9 +30,11 @@ const fetchData = async () => {
             <button class="commentBtn">See Comments</button>
             <span class="commentspan"></span>
             <table class="table">
-              <th>username<th>
-              <th>comment<th>
-              <th>creation_date<th>
+              <tr>
+              <td>username<td>
+              <td>comment<td>
+              <td>creation_date<td>
+              </tr>
             </table>
           </div>
           <form class="Form">
