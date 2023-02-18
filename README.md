@@ -57,9 +57,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Leaderboard] <a name="about-project"></a>
+# 📖 [TV APP] <a name="about-project"></a>
 
 **[RS TV APP]** is a project designed to display Movies.
+
+- Here is a [presentation video](https://drive.google.com/file/d/1xt-lt4h_PEm0NxdSGNK2T7M4inuTJsKl/view?usp=sharing)
 
 
 ## 🛠 Built With <a name="built-with"></a>

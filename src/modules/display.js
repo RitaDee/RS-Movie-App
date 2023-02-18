@@ -7,7 +7,7 @@ const Movies = document.querySelector('.main-show');
 
 const showMovie = async () => {
   const allShows = await getData();
-  const sliceShows = allShows.splice(10, 16);
+  const sliceShows = allShows.splice(0, 28);
   sliceShows.forEach((show) => {
     const template = `
   <div class="article">

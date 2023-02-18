@@ -1,5 +1,7 @@
 import getData from './api.js';
-import { sendComment, getAllComment } from './fetchComment.js';
+import {
+  sendComment, getAllComment,
+} from './fetchComment.js';
 
 const clickClose = (container) => {
   const cancelBtn = document.querySelector('.cancel');
@@ -7,6 +9,7 @@ const clickClose = (container) => {
     container.innerHTML = '';
   });
 };
+
 const fetchData = async () => {
   const data = await getData();
   const res = data.splice(0, 28);
@@ -37,25 +40,27 @@ const fetchData = async () => {
               </tr>
             </table>
           </div>
-          <form class="Form">
+          <form id="form">
             <h2>Add Comment</h2><br>
-            <input type="text" class="username" placeholder="Your name" required/>
-            <textarea rows="5" class="usercomment" placeholder="Your comment" required></textarea>
+            <input type="text" id="username" placeholder="Your name" required/>
+            <textarea rows="5" id="usercomment" placeholder="Your comment" required></textarea>
             <button class="btnSubmit" id="item${dataObj.id}" type="submit">Comment</button>
           </form>
           </div>
           </div>
           </div
           `;
-      // const submitBtn = document.querySelector('.btnSubmit');
-      const form = document.querySelector('.Form');
+      const form = document.querySelector('#form');
       form.addEventListener('submit', async (e) => {
-        const name = document.querySelector('.username');
-        const comment = document.querySelector('.usercomment');
+        e.preventDefault();
+        const table = document.querySelector('.table');
+        const name = document.querySelector('#username');
+        const comment = document.querySelector('#usercomment');
         const username = name.value;
         const usercomment = comment.value;
-        e.preventDefault();
-        sendComment(parseInt(item, 10), username, usercomment);
+        await sendComment(parseInt(item, 10), username, usercomment);
+        table.innerHTML = '';
+        getAllComment(parseInt(item, 10));
         form.reset();
       });
       getAllComment(parseInt(item, 10));
