@@ -11,6 +11,7 @@ const getComments = async (id) => {
 // post comment on api
 
 const postComments = async (id, name, comments) => {
+  console.log(id, name, comments);
   const posted = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments/`;
   const response = await fetch(posted, {
     method: 'POST',

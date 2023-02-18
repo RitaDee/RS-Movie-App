@@ -47,12 +47,16 @@ const fetchData = async () => {
           </div>
           </div
           `;
-      const submitBtn = document.querySelector('.btnSubmit');
-      submitBtn.addEventListener('click', (e) => {
-        const username = document.querySelector('.username');
-        const usercomment = document.querySelector('.usercomment');
+      // const submitBtn = document.querySelector('.btnSubmit');
+      const form = document.querySelector('.Form');
+      form.addEventListener('submit', async (e) => {
+        const name = document.querySelector('.username');
+        const comment = document.querySelector('.usercomment');
+        const username = name.value;
+        const usercomment = comment.value;
         e.preventDefault();
-        sendComment(parseInt(item, 10), username.value, usercomment.value);
+        sendComment(parseInt(item, 10), username, usercomment);
+        form.reset();
       });
       getAllComment(parseInt(item, 10));
       clickClose(container);

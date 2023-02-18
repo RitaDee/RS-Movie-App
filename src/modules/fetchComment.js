@@ -16,17 +16,15 @@ const getAllComment = async (id) => {
   }
 };
 
-const sendComment = async (id, name, comment) => {
-  console.log(name, comment)
-  const form = document.querySelector('.Form');
-  form.reset();
-  // if (username.value.length !== 0 && usercomment.value.length !== 0) {
-  //   const res = await postComments(`item${id}`, username.value, usercomment.value);
-  //   getAllComment(id);
-  //   form.reset();
-  //   return res;
-  // }
-  return id;
+const sendComment = async (id, username, usercomment) => {
+  console.log(id, username, usercomment);
+  if (username && usercomment) {
+    const res = await postComments(`item${id}`, username, usercomment);
+    getAllComment(id);
+    // form.reset();
+    // return res;
+  }
+  // return id;
 };
 
 export { sendComment, getAllComment };
