@@ -25,12 +25,6 @@ OPTIONAL SECTIONS:
 After you're finished please remove all the comments and instructions!
 -->
 
-<div align="center">
-
-  <h3><b>Microverse README Template</b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -247,6 +241,12 @@ Example:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
+
+- Connect the frontend with a backend service with database for fetching user data..
+- Add functionality for reservation on the application.
+- Add functionality for watching movies on the application.
+
+
 
 ## 🔭 Future Features <a name="future-features"></a>
 
