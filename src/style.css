@@ -109,11 +109,11 @@ img {
 }
 
 .content {
-  background-color: whitesmoke;
+  background-color: #099;
   overflow-y: auto;
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
-  height: 1000px;
+  height: 100%;
   padding-top: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -129,8 +129,9 @@ img {
 }
 
 .cancel {
-  margin-top: 15%;
+  margin-top: 30%;
   padding-left: 90%;
+  padding-top: 124px;
 }
 
 .namepop {
@@ -169,10 +170,16 @@ button[type=submit] {
   cursor: pointer;
 }
 
+table {
+  height: 10vh;
+  width: 80%;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
 table,
 tr {
   border: 1px solid black;
-  height: 0;
   overflow-y: scroll;
 }
 
@@ -199,7 +206,9 @@ td {
 }
 
 .commentspan {
-  color: #66f;
+  color: #f5f5f5;
   font-size: 20px;
   font-weight: 600;
+  text-align: center;
+  padding-left: 3rem;
 }

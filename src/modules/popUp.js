@@ -1,5 +1,7 @@
 import getData from './api.js';
-import { sendComment, getAllComment } from './fetchComment.js';
+import {
+  sendComment, getAllComment,
+} from './fetchComment.js';
 
 const clickClose = (container) => {
   const cancelBtn = document.querySelector('.cancel');
@@ -7,6 +9,7 @@ const clickClose = (container) => {
     container.innerHTML = '';
   });
 };
+
 const fetchData = async () => {
   const data = await getData();
   const res = data.splice(0, 28);
@@ -28,27 +31,38 @@ const fetchData = async () => {
           <img class="popImage" src="${dataObj.image.medium}"/>
           <p class="namepop">${dataObj.name}</p>
           <div id="${dataObj.id}">
-            <button class="commentBtn" id="${dataObj.id}">See Comments</button>
             <span class="commentspan"></span>
             <table class="table">
               <tr>
-              <td>username<td>
-              <td>comment<td>
-              <td>creation_date<td>
+              <td>username</td>
+              <td>comment</td>
+              <td>creation_date</td>
               </tr>
             </table>
           </div>
-          <form class="Form">
+          <form id="form">
             <h2>Add Comment</h2><br>
-            <input type="text" class="username" placeholder="Your name" required/>
-            <textarea rows="5" class="usercomment" placeholder="Your comment" required></textarea>
+            <input type="text" id="username" placeholder="Your name" required/>
+            <textarea rows="5" id="usercomment" placeholder="Your comment" required></textarea>
             <button class="btnSubmit" id="item${dataObj.id}" type="submit">Comment</button>
           </form>
           </div>
           </div>
           </div
           `;
-      sendComment(parseInt(item, 10));
+      const form = document.querySelector('#form');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const table = document.querySelector('.table');
+        const name = document.querySelector('#username');
+        const comment = document.querySelector('#usercomment');
+        const username = name.value;
+        const usercomment = comment.value;
+        await sendComment(parseInt(item, 10), username, usercomment);
+        table.innerHTML = '';
+        getAllComment(parseInt(item, 10));
+        form.reset();
+      });
       getAllComment(parseInt(item, 10));
       clickClose(container);
     });

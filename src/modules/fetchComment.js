@@ -1,35 +1,50 @@
 import { postComments, getComments } from './commentApi.js';
 
-const sendComment = async (id) => {
-  const submitBtn = document.querySelector(`#item${id}`);
-  submitBtn.addEventListener('click', async (e) => {
-    const username = document.querySelector('.username').value;
-    const usercomment = document.querySelector('.usercomment').value;
-    const form = document.querySelector('.Form');
-    if (username.length !== 0 && usercomment.length !== 0) {
-      await postComments(`item${id}`, username, usercomment);
-      form.reset();
-      e.preventDefault();
-    }
-  });
+const getAllComments = async (id) => {
+  const data = await getComments(id);
+  return data.json();
 };
+
+const displayComments = (data) => {
+  const table = document.querySelector('.table');
+  const commentSpan = document.querySelector('.commentspan');
+  if (data.length) {
+    table.innerHTML = '';
+    data.forEach((elem) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td class="username">${elem.username}</td>
+      <td class="comment">${elem.comment}</td>
+      <td class="creation_date">${elem.creation_date}</td> `;
+      table.appendChild(tr);
+    });
+    commentSpan.innerHTML = `${data.length} comments for this movie`;
+  }
+};
+
 const getAllComment = async (id) => {
   const table = document.querySelector('.table');
-  const commentBtn = document.querySelector('.commentBtn');
   const commentSpan = document.querySelector('.commentspan');
   const data = await getComments(id);
-
-  commentBtn.addEventListener('click', (e) => {
+  if (data.length) {
     data.forEach((elem) => {
-      table.innerHTML += `<tr>
-      <td class="username">${elem.username}</td>
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td class="username">${elem.username}</td>
       <td class="comment">${elem.comment}</td>
-      <td class="creation_date">${elem.creation_date}</td> 
-    </tr>`;
+      <td class="creation_date">${elem.creation_date}</td> `;
+      table.appendChild(tr);
     });
-    commentSpan.innerHTML += `${data.length} comments for this movie`;
-    e.preventDefault();
-  });
+    commentSpan.innerHTML = `${data.length} comments for this movie`;
+  }
 };
 
-export { sendComment, getAllComment };
+const sendComment = (id, username, usercomment) => {
+  if (username && usercomment) {
+    const res = postComments(`item${id}`, username, usercomment);
+    return res;
+  }
+  return id;
+};
+
+export {
+  sendComment, getAllComment, getAllComments, displayComments,
+};
