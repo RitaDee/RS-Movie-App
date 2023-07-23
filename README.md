@@ -95,7 +95,6 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-
 - **Create a git flow**
 - **Create a webpack**
 - **Use Es6 import**
